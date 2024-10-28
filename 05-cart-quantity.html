@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+    <style>
+      .light_blue {
+        background-color: lightskyblue;
+        color: black;
+      }
+
+      .green {
+        background-color: greenyellow;
+        color: black;
+      }
+
+      .red {
+        background-color: red;
+        color: white;
+      }
+
+      .green1 {
+        background-color: aquamarine;
+        color: black;
+      }
+
+      .green2 {
+        background-color:aqua;
+        color: black;
+      }
+      </style>
+  </head>
+  <body>
+    <p>
+      Hong Juice
+    </p>
+    <button class="light_blue" onclick="
+      console.log(alert(`Cart = ` + cartquantity));
+    ">
+      Show Quantity
+    </button>
+
+    <button class="green" onclick="
+      cartquantity = cartquantity + 1;
+      console.log(`cartquantity: ${cartquantity}`);
+      ">
+      Add To Cart
+    </button>
+
+    <button class="green1" onclick="
+      cartquantity = cartquantity + 2;
+      console.log(`cartquantity: ${cartquantity}`);
+      ">
+      +2
+    </button>
+
+    <button class="green2" onclick="
+      cartquantity = cartquantity + 5;
+      console.log(`cartquantity: ${cartquantity}`);
+    ">
+      +5
+    </button>
+
+    <button class="red" onclick="
+      cartquantity = 0;
+      console.log(`cartquantity: ${cartquantity}`);
+      console.log('Cart was Reset.');
+      console.log(alert('Your Cart Is Now Empty.'));
+      ">
+      Reset Cart
+    </button>
+
+
+    <script>
+      let cartquantity = 0;
+    </script>
+  </body>
+</html>
