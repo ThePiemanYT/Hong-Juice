@@ -3,35 +3,66 @@
   <head>
     <title>Cart Quantity</title>
     <style>
+      .hong {
+        font-family: Arial;
+        font-size: 19px;
+        font-weight: bold;
+      }
+
       .light_blue {
         background-color: lightskyblue;
         color: black;
+        padding-bottom: 6px;
+        padding-top: 6px;
+        cursor: pointer;
+        transition: 0.25s;
+        border-radius: 20px;
+      }
+
+      .light_blue:hover,
+      .green:hover,
+      .red:hover,
+      .green1:hover,
+      .green2:hover {
+        opacity: 0.7;
       }
 
       .green {
         background-color: greenyellow;
         color: black;
+        padding: 7px;
+        cursor: pointer;
+        border-radius: 20px;
       }
 
       .red {
-        background-color: red;
+        background-color: rgb(222, 0, 0);
         color: white;
+        padding: 7px;
+        cursor: pointer;
+        border-radius: 20px;
       }
 
       .green1 {
-        background-color: aquamarine;
+        background-color: rgb(106, 228, 188);
         color: black;
+        padding: 7px;
+        cursor: pointer;
+        border-radius: 20px;
       }
 
       .green2 {
-        background-color:aqua;
+        background-color:rgb(21, 181, 82);
         color: black;
+        padding: 7px;
+        cursor: pointer;
+        border-radius: 20px;
       }
       </style>
   </head>
   <body>
-    <p>
-      Hong Juice
+    <p class="hong">
+      Orange Juice
     </p>
     <button class="light_blue" onclick="
       console.log(alert(`Cart = ` + cartquantity));
