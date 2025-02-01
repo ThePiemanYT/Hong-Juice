@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NutrientKH</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/public/css/signup.css">
+    <link rel="stylesheet" href="/public/css/General.css">
+    <link rel="stylesheet" href="/public/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <form class="form" id="signup-form">
+       <p class="form-title">Create Account</p>
+        <div class="input-container">
+          <input class="input" type="email" placeholder="Email" id="email" required>
+          <label class="input-label" for="email">Email</label>
+          <span>
+          </span>
+      </div>
+      <div class="input-container">
+        <input class="input" type="password" placeholder="Password" id="password" required>
+        <label class="input-label" for="password">Password</label>
+        </div>
+      <div class="input-container">
+        <input class="input" type="password" placeholder="Confirm Password" id="confirm-password" required>
+        <label class="input-label" for="confirm-password">Confirm Password</label>
+        </div>
+
+        <button type="submit" class="submit">
+        Sign up
+      </button>
+
+      <p class="signup-link">
+        Already has an account?
+        <a href="/public/Pages/Login.html">Log In</a>
+      </p>
+   </form>
+
+    <script>
+      document.getElementById('signup-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        console.log('Form submitted'); // Debugging line
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        if (password !== confirmPassword) {
+          alert('Passwords do not match');
+          return;
+        }
+
+        try {
+          const response = await fetch('http://127.0.0.1:5500/register', { // Correct URL to server endpoint
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+          });
+
+          console.log('Response status:', response.status); // Debugging line
+
+          if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error data:', errorData); // Debugging line
+            throw new Error(errorData.message);
+          }
+
+          const data = await response.json();
+          console.log('Response data:', data); // Debugging line
+          alert('User registered successfully');
+          // Save the token in localStorage or cookies
+          localStorage.setItem('token', data.token);
+          window.location.href = '/public/Pages/profile.html';
+        } catch (error) {
+          console.error('Error:', error);
+          alert('An error occurred. Please try again.');
+        }
+      });
+    </script>
+  </body>
+</html>
