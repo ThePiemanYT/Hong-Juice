@@ -19,6 +19,10 @@
 
     <link rel="stylesheet" href="public/css/cart.css"> 
 
+    <link rel="stylesheet" href="public/css/footer.css">
+
+    <link rel="stylesheet" href="public/css/footer-logo.css">
+
     <link rel="icon" href="public/icon/NutrientKHTitle.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,14 +52,40 @@
 
     <nav>
       <ul class="sidebar">
-        <li href="" onclick="closeSidebar();"><a><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-        <li><a href="">Home</a></li>
-        <li><a href="">Tools</a></li>
-        <li><a href="">About Us</a></li>
+        <li onclick="closeSidebar();">
+            <a>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </a>
+        </li>
+        <details>
+            <summary>Home</summary>
+            <ul>
+                <li><a href="/public/Pages/document.html">Documentary</a></li>
+                <li><a href="">Profile</a></li>
+            </ul>
+        </details>
+        <details>
+            <summary>Tools</summary>
+            <ul>
+                <li><a href="/public/Pages/calculator.html">Calculator</a></li>
+                <li><a href="">Health Tracker</a></li>
+            </ul>
+        </details>
+        <details>
+            <summary>About Us</summary>
+            <ul>
+                <li><a href="">Our Mission</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </details>
+    
         <li class="login"><a href="public/Pages/Login.html">Login</a></li>
       </ul>
+
       <ul class="menu">
-        <li><a href="" class="logo"><img src="public/icon/NutrientKH.png" class="logo-header"><p class="Nutrient">Nutrient</p>KH</a></li>
+        <li><a href="" class="logo1"><img src="public/icon/NutrientKH.png" class="logo-header"><p class="Nutrient">Nutrient</p>KH</a></li>
         <li class="hideonMobile">
           <a href="/index.html">Home</a>
           <ul class="submenu">
@@ -73,8 +103,8 @@
         <li class="hideonMobile">
           <a href="#">About Us</a>
           <ul class="submenu">
+            <li><a href="#">Our Mission</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#">Policies</a></li>
           </ul>
         </li>
         <li class="hideonMobile"><a href="public/Pages/Login.html">Login</a></li>
@@ -86,7 +116,7 @@
       <div class="slogan">
         <h1>Think healthy, choose NutrientKH.</h1>
         <p>Your path to rediscover a healthier lifestyle starts here.</p>
-        <a href="#" class="cta-button">Call to Action</a>
+        <a href="#" class="cta-button1">Call to Action</a>
       </div>
     </div>
 
@@ -94,6 +124,60 @@
       <div class="loader"></div>
       <div class="loader-logo">Nutrient Wellness</div>
     </div>
+
+    <footer>
+      <div class="footer-top">
+        <div class="language-selector">
+          <img src="https://flagcdn.com/w40/us.png" width="40" alt="Language" class="flag-icon">
+          <span>English ▼</span>
+        </div>
+        <div class="social-icons">
+          <a href="https://www.x.com/" target="_blank" rel="noopener noreferrer"><img src="/public/icon/x-social-media-white-icon.png" alt="X"></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="/public/icon/instagram-white-icon.webp" alt="Instagram"></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="icon-big"><img src="/public/icon/facebook-new.png" alt="Facebook"></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="icon-big"><img src="/public/icon/youtube-app-white-icon.webp" alt="YouTube"></a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="icon-big"><img src="/public/icon/tiktok-round-white-icon.webp" alt="TikTok"></a>
+        </div>
+      </div>
+    
+      <div class="footer-links">
+        <div>
+          <h4>Product</h4>
+          <a href="#">Download</a>
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="#">Docs</a>
+          <a href="#">Blog</a>
+          <a href="#">Community</a>
+        </div>
+        <div>
+          <h4>Policies</h4>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    
+      <hr>
+    
+      <div class="footer-bottom">
+        <div class="logo">
+          <img src="/public/icon/NutrientKH.png" alt="GitHub">
+          <span class="footer-logo"><p class="logo3">Nutrient</p><p class="logo2">KH</p></span>
+        </div>
+        <button class="cta-button">Open NutrientKH</button>
+      </div>
+    </footer>
+    
 
     <script src="public/js/loading.js"></script>
     <script src="public/js/cart.js"></script>
