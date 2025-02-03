@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutrientKH</title>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7487029408349375"
+    crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/public/css/General.css">
+
+    <link rel="stylesheet" href="/public/css/calculator.css">
+
+    <link rel="stylesheet" href="/public/css/header.css">
+
+    <link rel="stylesheet" href="/public/css/footer.css">
+    <link rel="stylesheet" href="/public/css/footer-logo.css">
+
+    <link rel="icon" href="/public/icon/NutrientKHTitle.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+  </head>
+  <body style="height: 100%;
+    margin: 0px;">
+
+    <div class="announcement-banner">
+      <p>This website is just a prototype,</p>
+      <p>and will never be released.</p>
+    </div>
+
+    <div class="calculator">
+      <h1 class="space">Nutrition Calculator</h1>
+    
+      <label for="food">Enter Food:</label>
+      <input type="text" id="food" placeholder="Food item">
+      <p class="error" id="foodError"></p> <!-- Food error message -->
+
+      <label for="foodType">Select Food Type:</label>
+      <select id="foodType">
+        <option value="raw">Raw</option>
+        <option value="cooked">Cooked</option>
+      </select><p></p>
+    
+      <label for="weight">Enter Weight (in grams):</label>
+      <input type="number" id="weight" placeholder="Weight in grams">
+      <p class="error" id="weightError"></p> <!-- Weight error message -->
+    
+      <button onclick="calculateNutrition()">Calculate</button>
+    
+      <div id="result">
+        <p>Total Energy (Calories): <span id="energy"></span> kcal</p>
+        <p>Fiber: <span id="fiber"></span></p>
+        <p>Time to burn calories:</p>
+        <p>Walking (~5 km/h): <span id="walkTime"></span></p>
+        <p class="space">Running (~10 km/h): <span id="runTime"></span></p>
+
+        <p id="accuracyNotice" style="color: #ff9900; font-style: italic; text-align: center;">
+          Please note: The nutritional values provided are estimates and may not be 100% accurate. They are intended as approximations.
+        </p>
+      </div>
+    </div>
+
+    <div class="live-chat-placeholder" onclick="showChatMessage()">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 3C7.03 3 3 6.48 3 10.5c0 2.04 1.05 3.88 2.81 5.19L5 21l4.5-2.4c.82.22 1.68.34 2.5.34 4.97 0 9-3.48 9-7.5S16.97 3 12 3zm0 13c-.82 0-1.68-.12-2.5-.34L7 18l.81-3.31C6.05 13.88 5 12.04 5 10.5 5 7.42 8.13 5 12 5s7 2.42 7 5.5-3.13 5.5-7 5.5z"/>
+      </svg>
+    </div>
+  
+    <dialog id="chatDialog">
+      <p>The Live Chat Feature is currently under development.</p>
+      <button onclick="closeChatMessage()" class="close-dia">Close</button>
+    </dialog>
+
+    <nav>
+      <ul class="sidebar">
+        <li onclick="closeSidebar();">
+            <a>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </a>
+        </li>
+        <details>
+            <summary>Home</summary>
+            <ul>
+                <li><a href="/public/Pages/document.html">Documentary</a></li>
+                <li><a href="">Profile</a></li>
+            </ul>
+        </details>
+        <details>
+            <summary>Tools</summary>
+            <ul>
+                <li><a href="/public/Pages/calculator.html">Calculator</a></li>
+                <li><a href="">Health Tracker</a></li>
+            </ul>
+        </details>
+        <details>
+            <summary>About Us</summary>
+            <ul>
+                <li><a href="">Our Mission</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </details>
+    
+        <li class="login"><a href="public/Pages/Login.html">Login</a></li>
+      </ul>
+
+      <ul class="menu">
+        <li><a href="" class="logo1"><img src="/public/icon/NutrientKH.png" class="logo-header"><p class="Nutrient">Nutrient</p>KH</a></li>
+        <li class="hideonMobile">
+          <a href="/index.html">Home</a>
+          <ul class="submenu">
+            <li><a href="#">Documentary</a></li>
+            <li><a href="#">Tips & Tricks</a></li>
+          </ul>
+        </li>
+        <li class="hideonMobile">
+          <a href="#">Tools</a>
+          <ul class="submenu">
+            <li><a href="/public/Pages/calculator.html">Calculator</a></li>
+            <li><a href="#">Another Home 2</a></li>
+          </ul>
+        </li>
+        <li class="hideonMobile">
+          <a href="#">About Us</a>
+          <ul class="submenu">
+            <li><a href="#">Our Mission</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </li>
+        <li class="hideonMobile"><a href="/public/Pages/Login.html">Login</a></li>
+        <li class="menu-button" href="" onclick="showSidebar();"><a><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+      </ul>
+    </nav>
+
+    <footer>
+      <div class="footer-top">
+        <div class="language-selector">
+          <img src="https://flagcdn.com/w40/us.png" width="40" alt="Language" class="flag-icon">
+          <span>English ▼</span>
+        </div>
+        <div class="social-icons">
+          <a href="https://www.x.com/" target="_blank" rel="noopener noreferrer"><img src="/public/icon/x-social-media-white-icon.png" alt="X"></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="/public/icon/instagram-white-icon.webp" alt="Instagram"></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="icon-big"><img src="/public/icon/facebook-new.png" alt="Facebook"></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="icon-big"><img src="/public/icon/youtube-app-white-icon.webp" alt="YouTube"></a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="icon-big"><img src="/public/icon/tiktok-round-white-icon.webp" alt="TikTok"></a>
+        </div>
+      </div>
+    
+      <div class="footer-links">
+        <div>
+          <h4>Product</h4>
+          <a href="#">Download</a>
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="#">Docs</a>
+          <a href="#">Blog</a>
+          <a href="#">Community</a>
+        </div>
+        <div>
+          <h4>Policies</h4>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    
+      <hr>
+    
+      <div class="footer-bottom">
+        <div class="logo">
+          <img src="/public/icon/NutrientKH.png" alt="GitHub">
+          <span class="footer-logo"><p class="logo3">Nutrient</p><p class="logo2">KH</p></span>
+        </div>
+        <button class="cta-button">Open NutrientKH</button>
+      </div>
+    </footer>
+
+    <script src="/public/js/showsidebar.js"></script>
+    <script src="/public/js/calculator.js"></script>
+    <script>
+      function showChatMessage() {
+        document.getElementById('chatDialog').showModal();
+      }
+  
+      function closeChatMessage() {
+        document.getElementById('chatDialog').close();
+      }
+    </script>
+  </body>
+</html>
