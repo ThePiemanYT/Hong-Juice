@@ -31,7 +31,7 @@
 
   </head>
   <body style="height: 100%;
-    margin: 0px;">
+    margin: 0px;" onload="checkLoader()">
 
     <div class="announcement-banner">
       <p>This website is just a prototype,</p>
@@ -122,7 +122,7 @@
 
     <div class="loader-background">
       <div class="loader"></div>
-      <div class="loader-logo">Nutrient Wellness</div>
+      <div class="loader-logo">NutrientKH</div>
     </div>
 
     <footer>
@@ -192,5 +192,29 @@
         document.getElementById('chatDialog').close();
       }
     </script>
+    <script>
+      function checkLoader() {
+        // Check if the page was refreshed (Reload or BackForward)
+        if (performance.navigation.type === 1) {
+          document.documentElement.style.visibility = "visible";
+          document.querySelector(".loader-background").remove();
+        } else {
+          // First visit or new tab: Show loader
+          localStorage.setItem("loaderShown", "true");
+          document.documentElement.style.visibility = "visible";
+        }
+      }
+    
+      function resetLoaderOnClose() {
+        localStorage.removeItem("loaderShown");
+      }
+    
+      // Call function when page loads
+      checkLoader();
+    
+      // Reset when the tab is closed
+      window.addEventListener("beforeunload", resetLoaderOnClose);
+    </script>    
+    
   </body>
 </html>
