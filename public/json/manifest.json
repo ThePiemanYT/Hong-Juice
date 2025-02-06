@@ -1,0 +1,15 @@
+{
+  "name": "NutrientKH",
+  "short_name": "NutrientKH",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "rgba(0, 0, 0, 0)",
+  "description": "Track your nutrition and health easily.",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "/public/icon/NutrientKH.png"
+    }
+  ]
+}
